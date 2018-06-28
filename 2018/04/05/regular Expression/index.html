@@ -4,15 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>chovitaminljy</title>
+  <title>正则表达式总结 | chovitaminljy</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="chovitaminljy">
-<meta property="og:url" content="http://https://liejiayong.github.io/chovitaminljy/index.html">
+  <meta name="description" content="正则表达式是匹配模式，要么匹配字符，要么匹配位置  字符匹配内容包括： 1.两种模糊匹配 2.字符组 3.量词 4.分支结构 5.案例分析 1 两种模糊匹配 1.1 横向模糊匹配  一个正则可匹配的字符串的长度不是固定的，可以是多种情况的var regex = /ab{2,5}c/gvar string = “abc abbc abbbc abbbbc abbbbbc abbbbbbc”;con">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式总结">
+<meta property="og:url" content="http://https://liejiayong.github.io/chovitaminljy/2018/04/05/regular Expression/index.html">
 <meta property="og:site_name" content="chovitaminljy">
+<meta property="og:description" content="正则表达式是匹配模式，要么匹配字符，要么匹配位置  字符匹配内容包括： 1.两种模糊匹配 2.字符组 3.量词 4.分支结构 5.案例分析 1 两种模糊匹配 1.1 横向模糊匹配  一个正则可匹配的字符串的长度不是固定的，可以是多种情况的var regex = /ab{2,5}c/gvar string = “abc abbc abbbc abbbbc abbbbbc abbbbbbc”;con">
 <meta property="og:locale" content="zh-cms-Hans">
+<meta property="og:updated_time" content="2018-06-28T15:29:37.373Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="chovitaminljy">
+<meta name="twitter:title" content="正则表达式总结">
+<meta name="twitter:description" content="正则表达式是匹配模式，要么匹配字符，要么匹配位置  字符匹配内容包括： 1.两种模糊匹配 2.字符组 3.量词 4.分支结构 5.案例分析 1 两种模糊匹配 1.1 横向模糊匹配  一个正则可匹配的字符串的长度不是固定的，可以是多种情况的var regex = /ab{2,5}c/gvar string = “abc abbc abbbc abbbbc abbbbbc abbbbbbc”;con">
   
     <link rel="alternate" href="/atom.xml" title="chovitaminljy" type="application/atom+xml">
   
@@ -58,65 +62,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-计算今天为周几" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/05/计算今天为周几/" class="article-date">
-  <time datetime="2018-04-05T13:38:13.680Z" itemprop="datePublished">2018-04-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/05/计算今天为周几/">计算当天为星期几</a>
-    </h1>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>想知道某个日期是星期几时，不一定要打开日历才能找出来。只要学会以下这个方程式，任何日期都可以算出是星期几。</p>
-</blockquote>
-<h2 id="首先，让我们先看看以下这三个表格里面的代码。"><a href="#首先，让我们先看看以下这三个表格里面的代码。" class="headerlink" title="首先，让我们先看看以下这三个表格里面的代码。"></a>首先，让我们先看看以下这三个表格里面的代码。</h2><p>|   星期      |   代码      |<br>|   星期日    |    0        |<br>|   星期一    |    1        |<br>|   星期二    |    2        |<br>|   星期三    |    3        |<br>|   星期四    |    4        |<br>|   星期五    |    5        |</p>
-<h2 id="星期六-6"><a href="#星期六-6" class="headerlink" title="|   星期六    |    6        |"></a>|   星期六    |    6        |</h2><hr>
-<p>|   月份      |   代码      |<br>|   一月      |    6        |<br>|   二月      |    2        |<br>|   三月      |    2        |<br>|   四月      |    5        |<br>|   五月      |    0        |<br>|   六月      |    3        |<br>|   七月      |    5        |<br>|   八月      |    1        |<br>|   九月      |    4        |<br>|   十月      |    6        |<br>|   十一月    |    2        |</p>
-<h2 id="十二月-4"><a href="#十二月-4" class="headerlink" title="|   十二月    |    4        |"></a>|   十二月    |    4        |</h2><hr>
-<p>|   闰年      |   代码       |<br>|   2000      |    0         |<br>|   2004      |    5         |<br>|   2008      |    10        |<br>|   2012      |    15        |<br>|   2016      |    20        |<br>|   2020      |    25        |</p>
-<h2 id="2024-30"><a href="#2024-30" class="headerlink" title="|   2024      |    30        |"></a>|   2024      |    30        |</h2><p>首先，星期日到星期六分别用0-6来表示，而年份的话以2000年为基年，每加一年则+1（例：2001年的代码为0+1=1），而到了闰年则再+1（例：2004年的代码为0+4+1=5；计算2008年的代码则是用2004的代码5+4+1=10）以此类推。在这里比较困难的只是月份的代码，这里必须背的，将这些代码牢牢地记在脑海里。</p>
-<p>第二点要记住的就是，因为一个礼拜有7天，凡是7的倍数都可以被拿掉。例如2008年的代码是10，拿掉7则剩下3；2024年的代码是30，拿掉7x4=28则剩下30-28=2。</p>
-<h2 id="▼以下图为例，我们这次要计算2069年7月20号是星期几。"><a href="#▼以下图为例，我们这次要计算2069年7月20号是星期几。" class="headerlink" title="▼以下图为例，我们这次要计算2069年7月20号是星期几。"></a>▼以下图为例，我们这次要计算2069年7月20号是星期几。</h2><p>7-20-2069<br>5 + 6 + 2 = 13<br>            -7<br>            ___<br>             6</p>
-<pre><code>星期六
-</code></pre><hr>
-<p>为了算出2069年的代码，我们将69拆分成68+1。因为68是闰年，我们除以4可以得出2068是2000年后的第17个闰年。以17乘5我们得出85，再加上1我们可以得出2069年的代码为86。</p>
-<p>（简地来说就是69=68+1=（4x17）+1。因为闰年要+1，所以变成[（4+1）x17]+1=86。）</p>
-<p>接下来，因为7的倍数可以被拿掉，所以86除以7我们得出余数为2；相同地，20除以7的余数是6。然后根据上面的表格我们知道7月的代码是5。</p>
-<p>要计算出某个日期是星期几，我们只需要将年份的代码+月份的代码+日期就可以算出了！首先我们用5+6+2=13，拿掉7后我们最终得出6这个数字。也就是说2069年7月20号是星期六！</p>
-<p>看了以上的例子，相信这些简单的加法应该不会难倒你吧！接下来，我们要提醒大家，如果要计算的日期是闰年的1月或2月的话，此时代码就要-1。为了让大家更能了解，就让我们一起来算一算2004年2月18号是星期几吧。</p>
-<hr>
-<p>2-18-2004<br>2 + 4 + 5 = 11</p>
-<pre><code>-7
------
-4-1
-星期三
-</code></pre><hr>
-<p>以上的算法只适用于2000年到2099年之间的任一日期。如果要算1999年之前或2099年之后的话，只需要再加上以下代码就可以算出正确的答案了。</p>
-<hr>
-<p>|   年份            |   代码       |<br>|   2300到2399      |    +1        |<br>|   2200到2299      |    +3        |<br>|   2100到2199      |    +5        |<br>|   2000到2099      |    0         |<br>|   1900到1999      |    +1        |<br>|   1800到1899      |    +3        |<br>|   1700到1799      |    +5        |<br>|   1600到1699      |    0         |<br>|   1500到1599      |    +1        |<br>|   1400到1499      |    +3        |<br>|   1300到1399      |    +5        |</p>
-<h2 id="1200到1299-0"><a href="#1200到1299-0" class="headerlink" title="|   1200到1299      |    0         |"></a>|   1200到1299      |    0         |</h2><p>这些数学小技巧是不是很神奇呢？尤其是最后一个，只需要加减乘除就可以算出某个日期是星期几。学校里完全没有教过这样的方式，也许大家可以拿去和数学老师讨论一下，说不定会被称赞呢。虽然数学还是有很多必须理解的观念，但多了一些小技巧，至少在计算上会快一点，现实生活中偶尔用到也是很实用的。赶快自己动手算一算，然后把这些学校没教的数学分享出去让大家知道吧！</p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://https://liejiayong.github.io/chovitaminljy/2018/04/05/计算今天为周几/" data-id="cjiypfxng0002g41l8xf2f7pu" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-  
-    <article id="post-regular Expression" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-regular Expression" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/04/05/regular Expression/" class="article-date">
   <time datetime="2018-04-05T13:38:13.641Z" itemprop="datePublished">2018-04-05</time>
@@ -127,8 +73,8 @@
     
     
       <header class="article-header">
-        <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/05/regular Expression/">正则表达式总结</a>
+        <h1 class="article-title" itemprop="name">
+      正则表达式总结
     </h1>
       </header>
     
@@ -386,43 +332,24 @@ console.log( string.match(regex) );
     </footer>
   </div>
   
-</article>
+    <nav id="article-nav">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/21/hello-world/" class="article-date">
-  <time datetime="2018-03-21T14:35:17.005Z" itemprop="datePublished">2018-03-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/21/hello-world/">Hello World</a>
-    </h1>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://https://liejiayong.github.io/chovitaminljy/2018/03/21/hello-world/" data-id="cjiypfxn60000g41llkf5mi9d" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
+    <a href="/2018/04/05/计算今天为周几/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          计算当天为星期几
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/21/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
   
 </article></section>
         
